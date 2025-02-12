@@ -1,3 +1,118 @@
+  Last login: Wed Feb 12 01:34:04 on ttys000
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 ~ % https://github.com/iliyansherali/qtm350-quiz01.git
+zsh: no such file or directory: https://github.com/iliyansherali/qtm350-quiz01.git
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 ~ % git clone https://github.com/iliyansherali/qtm350-quiz01.git
+Cloning into 'qtm350-quiz01'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (8/8), done.
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 ~ % cd qtm350-quiz01
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git checkout -b feature-update
+Switched to a new branch 'feature-update'
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % mkdir reports
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % touch reports/summary.md
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % echo "This document provides a summary of the project updates." > reports/summary.md
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git add reports
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git commit -m "Add reports directory"
+[feature-update 28d5578] Add reports directory
+ 1 file changed, 1 insertion(+)
+ create mode 100644 reports/summary.md
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % touch reports/file{1..3}.txt
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % mv data/raw-data.csv data/input-data.csv
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % mkdir scripts/backup && cp scripts/*.py scripts/backup/
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % rm docs/documentation.md
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git add .
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git commit -m "Update project files"
+[feature-update da022e9] Update project files
+ 9 files changed, 1 deletion(-)
+ rename data/raw-data.csv => commands.txt (100%)
+ create mode 100644 data/input-data.csv
+ delete mode 100644 docs/documentation.md
+ create mode 100644 reports/file1.txt
+ create mode 100644 reports/file2.txt
+ create mode 100644 reports/file3.txt
+ create mode 100644 scripts/backup/01-setup.py
+ create mode 100644 scripts/backup/02-data-cleaning.py
+ create mode 100644 scripts/backup/03-data-modelling.py
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git push origin feature-update
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 1.00 KiB | 1.00 MiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'feature-update' on GitHub by visiting:
+remote:      https://github.com/iliyansherali/qtm350-quiz01/pull/new/feature-update
+remote: 
+To https://github.com/iliyansherali/qtm350-quiz01.git
+ * [new branch]      feature-update -> feature-update
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % touch .gitignore
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % echo -e "temp/
+dataset0?.csv" > .gitignore
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % cat .gitignore
+temp/
+dataset0?.csv
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git add .gitignore && git commit -m "Add .gitignore file"
+[feature-update df13042] Add .gitignore file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git merge feature-update
+Updating 4258465..df13042
+Fast-forward
+ .gitignore                          | 2 ++
+ data/raw-data.csv => commands.txt   | 0
+ data/input-data.csv                 | 0
+ docs/documentation.md               | 1 -
+ reports/file1.txt                   | 0
+ reports/file2.txt                   | 0
+ reports/file3.txt                   | 0
+ reports/summary.md                  | 1 +
+ scripts/backup/01-setup.py          | 0
+ scripts/backup/02-data-cleaning.py  | 0
+ scripts/backup/03-data-modelling.py | 0
+ 11 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ rename data/raw-data.csv => commands.txt (100%)
+ create mode 100644 data/input-data.csv
+ delete mode 100644 docs/documentation.md
+ create mode 100644 reports/file1.txt
+ create mode 100644 reports/file2.txt
+ create mode 100644 reports/file3.txt
+ create mode 100644 reports/summary.md
+ create mode 100644 scripts/backup/01-setup.py
+ create mode 100644 scripts/backup/02-data-cleaning.py
+ create mode 100644 scripts/backup/03-data-modelling.py
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % history | tail -n 50 > commands.txt 
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git add commands.txt && git commit -m "Update commands.txt with all used commands" && git push origin main
+[main 99a7796] Update commands.txt with all used commands
+ 1 file changed, 16 insertions(+)
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 902 bytes | 902.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/iliyansherali/qtm350-quiz01.git
+   4258465..99a7796  main -> main
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git add commands.txt
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git commit -m "Update commands.txt with complete list of commands"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git push origin main
+Everything up-to-date
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % ls
+README.md	commands.txt	data		reports		scripts
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % head commands.txt
   260  echo "This document provides a summary of the project updates." > reports/summary.md
   261  git add reports
   262  git commit -m "Add reports directory"
@@ -8,9 +123,50 @@
   267  git add .
   268  git commit -m "Update project files"
   269  git push origin feature-update
-  270  touch .gitignore
-  271  echo -e "temp/\ndataset0?.csv" > .gitignore
-  272  cat .gitignore
-  273  git add .gitignore && git commit -m "Add .gitignore file"
-  274  git checkout main
-  275  git merge feature-update
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 %                                                        
+git clone <https://github.com/iliyansherali/qtm350-quiz01.git>
+
+cd <qtm350-quiz01>
+git checkout -b feature-update
+
+mkdir reports
+
+touch reports/summary.md
+zsh: parse error near `\n'
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % 
+git clone <https://github.com/iliyansherali/qtm350-quiz01.git>
+
+cd <qtm350-quiz01>
+git checkout -b feature-update
+
+mkdir reports
+
+touch reports/summary.md
+zsh: parse error near `\n'
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % 
+git clone https://github.com/iliyansherali/qtm350-quiz01.git  
+
+cd qtm350-quiz01 
+git checkout -b feature-update
+
+mkdir reports
+
+touch reports/summary.md
+Cloning into 'qtm350-quiz01'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 23 (delta 3), reused 1 (delta 1), pack-reused 16 (from 1)
+Receiving objects: 100% (23/23), done.
+Resolving deltas: 100% (4/4), done.
+Switched to a new branch 'feature-update'
+mkdir: reports: File exists
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git add commands.txt
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git commit -m "Update commands.txt with complete lists of commands"
+On branch feature-update
+nothing to commit, working tree clean
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % git push origin main
+Everything up-to-date
+(base) iliyansherali@Iliyans-MacBook-Pro-1663 qtm350-quiz01 % nano commands.txt
+
+
